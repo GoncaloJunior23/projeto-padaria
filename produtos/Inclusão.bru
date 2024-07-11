@@ -1,0 +1,25 @@
+meta {
+  name: Inclusão
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3000/produtos
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTG9nYWRvSWQiOjYsInVzZXJMb2dhZG9Ob21lIjoiR29uw6dhbG8gSnVuaW9yIiwiaWF0IjoxNzIwMjgxMzgwLCJleHAiOjE3MjAyODQ5ODB9.wKZY0qMFTXB-rxZ9uJFQI7eZE3DCcnr7JwbaFurOvZo
+}
+
+body:json {
+  {
+    "nome": "Sanduiche de Salmão",
+    "tipo": "Salgado",
+    "validade": 2,
+    "usuarioId": 6,
+    "preco": 55.50 
+  }
+}

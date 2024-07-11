@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: padaria_pane_mio
+    ports:
+      - "3000:3000"
+    volumes:
+    - .:/app
+    - /app/node_modules
+    environment:
+      - node_ENV=production
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=root
+      - DB_password=root
+      - DB_NAME=argentina_wines
+    depends_on:
+     - mysql
+    command: npm run start:dev
+  mysql:
+     image: mysql:8.0
+     container_name: mysql
+     environment:
+        MYSQL_ROOT_PASSWORD=root
+  MYSQL DATABASE: padaria_pane_mio
+  ports:
+    - "3307:3306"
+  volumes:
+    - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
+

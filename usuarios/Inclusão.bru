@@ -1,0 +1,20 @@
+meta {
+  name: Inclusão
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3000/usuarios
+  body: json
+  auth: none
+}
+
+body:json {
+   {
+    "nome": "Maria Helena",
+    "email": "helena@gmail.com",
+    "senha": "Helena#12345"
+  }
+  
+}
